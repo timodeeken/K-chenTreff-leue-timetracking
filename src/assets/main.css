@@ -34,4 +34,12 @@
   font-weight: 600;
   color: #e20119 !important;
 }
+
+.badge-leue-danger {
+  background-color: #e20119;
+}
+
+.badge-leue-success {
+  background-color: #34ad19;
+}
 /*# sourceMappingURL=main.css.map */

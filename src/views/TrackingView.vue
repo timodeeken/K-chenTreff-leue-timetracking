@@ -29,13 +29,20 @@
             },
             checkInCheckOut(e){
                 e.preventDefault(); 
-                axios.post(this.url + '/checkInCheckOut/' + this.personal_number).then(response => {
-                    this.listMembers();
+                if(this.personal_number == null){
+                    this.toast.error('Bitte gebe eine Personal Nummer an.');
                     this.personal_number = null
-                    this.toast.success(response.data.message);
-                }).catch(errors => {
-                    console.log(errors)
-                });
+                    this.listMembers();
+                    this.$refs.personal_number.focus();
+                } else {
+                    axios.post(this.url + '/checkInCheckOut/' + this.personal_number).then(response => {
+                        this.listMembers();
+                        this.personal_number = null
+                        this.toast.success(response.data.message);
+                    }).catch(errors => {
+                        console.log(errors)
+                    });
+                }
             }
         },
         created() { 
@@ -63,12 +70,11 @@
                         Zeiterfassung
                     </div>
                     <div class="card-body">
-                        
                         <div class="row">
-                            <div class="col-md-7">
+                            <div class="col-md-7 mb-4">
                                 <form v-on:submit="checkInCheckOut">
                                     <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" autofocus v-model="personal_number" id="personal_number" name="personal_number" placeholder="Personal Nummer">
+                                        <input type="text" class="form-control" inputmode="numeric" autofocus v-model="personal_number" ref="personal_number" id="personal_number" name="personal_number" placeholder="Personal Nummer">
                                         <label for="personal_number">Personal Nummer</label>
                                     </div>
                                     <CustomButton label="Anmelden / Abmelden" />
@@ -88,7 +94,7 @@
                                            <tr v-for="member in memberList" :key="member.id">
                                                 <td>{{ member.name }}</td>
                                                 <td>{{ member.personal_number }}</td>
-                                                <td>{{ member.status }}</td>
+                                                <td v-html="member.status"></td>
                                             </tr>
                                         </tbody>
                                     </table>
