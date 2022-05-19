@@ -7,15 +7,6 @@ export default {
 			type: String,
 			required: true,
 		},
-
-		theme: {
-			type: String,
-			required: false,
-			default: 'prime',
-			validator(value) {
-				return ['prime', 'secondary'].includes(value);
-			},
-		},
 	},
 	emits: ['click'],
 };
@@ -23,8 +14,7 @@ export default {
 
 <template>
 	<button
-		class="submit-button btn btn-danger"
-		:class="theme"
+		class="btn btn-danger"
 		@click="$emit('click', $event)"
         type="submit">
 		{{ label }}

@@ -19,7 +19,8 @@ coverage
 
 # Editor directories and files
 .vscode/*
-!.vscode/extensions.json
+.vscode/extensions.json
+.vscode/sftp.json
 .idea
 *.suo
 *.ntvs*
@@ -28,3 +29,4 @@ coverage
 *.sw?
 .env
 package-lock.json
+

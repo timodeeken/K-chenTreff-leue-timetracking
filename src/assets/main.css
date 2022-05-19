@@ -1,0 +1,37 @@
+.card-header {
+  padding: 1.5rem;
+}
+
+.table-leue {
+  background-color: #e20119;
+  color: #fff;
+  border-bottom: 4px solid #af0113;
+}
+
+.btn-danger {
+  background-color: #e20119;
+  border-bottom: 4px solid #af0113;
+  text-align: right;
+}
+
+.btn-danger:hover {
+  border-bottom: 0;
+  -webkit-transition: 200ms all;
+  transition: 200ms all;
+}
+
+.alert p {
+  padding-bottom: 0;
+  margin-bottom: 0.1rem;
+}
+
+.navbar {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.router-link-exact-active {
+  font-weight: 600;
+  color: #e20119 !important;
+}
+/*# sourceMappingURL=main.css.map */
