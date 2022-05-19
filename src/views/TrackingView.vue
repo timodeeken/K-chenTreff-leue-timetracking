@@ -77,7 +77,9 @@
                                         <input type="text" class="form-control" inputmode="numeric" autofocus v-model="personal_number" ref="personal_number" id="personal_number" name="personal_number" placeholder="Personal Nummer">
                                         <label for="personal_number">Personal Nummer</label>
                                     </div>
-                                    <CustomButton label="Anmelden / Abmelden" />
+                                    <div class="mt-3 justify-content-end d-flex">
+                                        <CustomButton label="Anmelden / Abmelden" />
+                                    </div>
                                 </form>
                             </div>
                             <div class="col-md-5">
